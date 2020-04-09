@@ -46,9 +46,10 @@ class _HomeState extends State<Home>{
         height: 150.0,
         child: Column(
           children: <Widget>[
+            Text('Logo Size: $_size Rotation Degree: $_angle'),
             Slider(
               min: 0.0,
-              max: 300.0,
+              max: 360.0,
               value: size,
               onChanged: (newValue) => size = newValue,
             ),
