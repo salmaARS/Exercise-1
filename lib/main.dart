@@ -41,31 +41,7 @@ class _HomeState extends State<Home>{
       body: Center(
         child: Transform.rotate(angle: _angle, child: fluttFunction(_size),)
       ),
-      floatingActionButton: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-          FloatingActionButton.extended(
-            onPressed: () {_size = 50;  
-            setState(() {}); },
-          label: Text('Small'),
-          icon: Icon(Icons.photo_size_select_small),
-         
-          ),
-          FloatingActionButton.extended(
-           onPressed: () { _size = 150;
-            setState((){});},
-            label: Text('Medium'),
-            icon : Icon(Icons.photo_size_select_actual),
-            backgroundColor: Colors.blue,
-          ),
-          FloatingActionButton.extended(
-            onPressed: () { _size = 300.00;
-             setState((){});},
-            label: Text('Big'),
-            icon : Icon(Icons.photo_size_select_large),
-            backgroundColor: Colors.blue,
-          )],
-      ),
+      floatingActionButton: _buttons(),
       bottomNavigationBar: SizedBox(
         height: 150.0,
         child: Column(
@@ -93,5 +69,33 @@ class _HomeState extends State<Home>{
   }
   FlutterLogo fluttFunction(double saze){
     return FlutterLogo(size: saze);
+  }
+
+  Row _buttons(){
+    return Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          FloatingActionButton.extended(
+            onPressed: () {_size = 50;  
+            setState(() {}); },
+          label: Text('Small'),
+          icon: Icon(Icons.photo_size_select_small),
+         
+          ),
+          FloatingActionButton.extended(
+           onPressed: () { _size = 150;
+            setState((){});},
+            label: Text('Medium'),
+            icon : Icon(Icons.photo_size_select_actual),
+            backgroundColor: Colors.blue,
+          ),
+          FloatingActionButton.extended(
+            onPressed: () { _size = 300.00;
+             setState((){});},
+            label: Text('Big'),
+            icon : Icon(Icons.photo_size_select_large),
+            backgroundColor: Colors.blue,
+          )],
+      );
   }
 }
