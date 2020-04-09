@@ -24,28 +24,60 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home>{
+
+
      @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
         child: FlutterLogo(size: 150.0),
       ),
-      floatingActionButton: FloatingActionButton.extended(
-        onPressed: () {},
-        label: Text('Color'),
-        icon: Icon(Icons.color_lens),
+      floatingActionButton: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          FloatingActionButton.extended(
+            onPressed: () { },
+          label: Text('Small'),
+          icon: Icon(Icons.photo_size_select_small),
+         
+          ),
+          FloatingActionButton.extended(
+           onPressed: () {},
+            label: Text('Medium'),
+            icon : Icon(Icons.photo_size_select_actual),
+            backgroundColor: Colors.blue,
+          ),
+          FloatingActionButton.extended(
+            onPressed: () {},
+            label: Text('Big'),
+            icon : Icon(Icons.photo_size_select_large),
+            backgroundColor: Colors.blue,
+          )],
       ),
       bottomNavigationBar: SizedBox(
         height: 150.0,
-        child: Slider(
-          min: 0.0,
-          max: 300.0,
-          value: 150.0,
-          onChanged: (newValue) {},
-        ),
+        child: Column(
+          children: <Widget>[
+            Slider(
+              min: 0.0,
+              max: 300.0,
+              value: 0,
+              onChanged: (newValue) => {},
+            ),
 
-      ),
+            Slider(
+              min: 0.0,
+              max: 300.0,
+              value: 0,
+              onChanged: (newValue) => {},
+            ),
+
+          ], 
+       
+        )   
+      )
     );
+    
   }
   
 }
