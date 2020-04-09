@@ -26,6 +26,9 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home>{
 
   
+  double _angle = 0.0;
+  get angle => _angle;
+  set angle(value) => setState(()=> _angle = value);
 
   double _size = 150.0;
   get size => _size;
@@ -36,7 +39,7 @@ class _HomeState extends State<Home>{
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: FlutterLogo(size: _size),
+        child: Transform.rotate(angle: _angle, child: FlutterLogo(size: _size),)
       ),
       floatingActionButton: Row(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -71,14 +74,14 @@ class _HomeState extends State<Home>{
               min: 0.0,
               max: 300.0,
               value: size,
-              onChanged: (newValue) => {},
+              onChanged: (newValue) => size = newValue,
             ),
 
             Slider(
               min: 0.0,
-              max: 300.0,
-              value:0,
-              onChanged: (newValue) => {},
+              max: 360.0,
+              value: angle,
+              onChanged: (newValue) => angle = newValue,
             ),
 
           ], 
