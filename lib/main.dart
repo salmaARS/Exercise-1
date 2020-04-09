@@ -7,8 +7,8 @@
 // Only one submission is required per pair
 // Submit only the source code file (main.dart)
 
-//! Name 1:  ......
-//! Name 2:  ......
+//! Name 1:  Salma Aulia
+//! Name 2:  Riziq Fattah R
 
 import 'package:flutter/material.dart';
 
