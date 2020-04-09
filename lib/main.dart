@@ -39,7 +39,7 @@ class _HomeState extends State<Home>{
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Transform.rotate(angle: _angle, child: FlutterLogo(size: _size),)
+        child: Transform.rotate(angle: _angle, child: fluttFunction(_size),)
       ),
       floatingActionButton: Row(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -91,5 +91,7 @@ class _HomeState extends State<Home>{
     );
     
   }
-  
+  FlutterLogo fluttFunction(double saze){
+    return FlutterLogo(size: saze);
+  }
 }
